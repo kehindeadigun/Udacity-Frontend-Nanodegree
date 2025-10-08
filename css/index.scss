@@ -27,7 +27,7 @@
 
 .desc-acticle-container {
     display: grid;
-    grid-template-columns: repeat(2, min(calc(100%/2 - $gap*2), 250px));
+    grid-template-columns: repeat(2, min(calc(100%/2 - $gap), 250px));
     justify-content: space-around;
     column-gap: $gap;
     row-gap: 2*$gap;
@@ -36,7 +36,7 @@
 .desc-article {
     border: 0.1rem solid grey;
     border-radius: 12px;
-    height: 130px;
+    height: 10.83rem;
     
     overflow: hidden;
     display: grid;
@@ -65,7 +65,7 @@
 
     &__img-container {
 
-        margin: 1.5rem 0;
+        padding: 1.5rem 0;
 
         img {
             width: 100%;
@@ -86,8 +86,7 @@
 
 @media (min-width: 550px) {
     .desc-acticle-container {
-        grid-template-columns: repeat(3, min(calc(100%/3 - $gap*3), 250px));
-        justify-content: space-between;
+        grid-template-columns: repeat(3, min(calc(100%/3 - $gap*2), 250px));
         column-gap: $gap;
         row-gap: 2*$gap;
     }
@@ -95,7 +94,7 @@
 
 @media (min-width: 700px) {
     .desc-acticle-container {
-        grid-template-columns: repeat(4, min(calc(100%/4 - $gap*4), 250px));
+        grid-template-columns: repeat(4, min(calc(100%/4 - $gap*3), 250px));
         column-gap: $gap;
         row-gap: 2*$gap;
     }
@@ -103,29 +102,25 @@
 
 @media (min-width: 1000px) {
     .desc-acticle-container {
-        grid-template-columns: repeat(4, min(calc(100%/4 - $gap*4), 250px));
+        grid-template-columns: repeat(4, min(calc(100%/4 - $gap*3), 250px));
         gap: calc($gap/100);
+        justify-content: space-between;
     }
 
     .description {
-        display: grid;
-        justify-content: center;
-        align-items: center;
         width: 1000px;
     }
 
     .about-us {
         
-        display: grid;
-        justify-content: center;
-        align-items: center;
         width: 1000px;
 
         &__img-container {
 
             float: left;
             width: 50%;
-            padding: 0 1rem 1rem 0;
+            padding: 0 1rem 0.5rem 0;
+            margin: 0 auto;
 
             img {
                 width: 100%;
@@ -134,10 +129,22 @@
 
         }
 
-        /*&::after {
+        &::after {
             content: "";
             display: block;
             clear: right;
-        }*/
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .description {
+        width: 1200px;
+    }
+
+    .about-us {
+        
+        width: 1200px;
     }
 }

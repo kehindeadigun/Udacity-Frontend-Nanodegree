@@ -93,4 +93,15 @@ footer {
   html {
     font-size: 14px;
   }
+  .header {
+    height: 500px;
+  }
+}
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+  .header {
+    height: 600px;
+  }
 }/*# sourceMappingURL=main.css.map */
