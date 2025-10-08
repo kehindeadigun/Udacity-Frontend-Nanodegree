@@ -1,0 +1,123 @@
+@use '_partials' as *;
+
+.main {
+    margin: 0 auto;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.header {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2, h3, p {
+    text-align: center;
+}
+
+h3, p {
+    padding: 0.2rem;
+}
+
+/* Contact Information and Address styles */
+
+.contact-info {
+
+    &__title {
+        font-size: 2rem;
+    }
+
+    &__address {
+        margin: 1rem 0;
+    }
+
+    &__address-title {
+        font-size: 1.5rem;
+    }
+
+    &__container {
+        margin: 1.6rem 0;
+    }
+}
+
+/* Contact Form styles for Inputs and Buttons */
+
+.form {
+    margin: 1rem 0;
+    display: grid;
+    height: min(40vh, 300px);
+    gap: $gap;
+    grid-template-rows: repeat(2, 1fr) 3fr 1fr;
+    grid-template-columns: 1fr 3fr;
+    justify-content: center;
+    align-content: center;
+    align-items: start;
+}
+
+.form-label {
+    justify-self: right;
+    align-self: center;
+    font-weight: 500;
+}
+
+.message-label {
+    align-self: start;
+}
+
+input, textarea {
+    border: 1.5px solid #E46C66;
+    border-radius: 5px;
+    padding: 0.5rem;
+    height: 100%;
+}
+
+textarea {
+    height: 100%;
+    resize: vertical;
+}
+
+.button-container {
+    grid-area: 4/ 2/ span 1 /span 1;
+}
+
+.button {
+    border-radius: 5px;
+    color: #000;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.25s ease-in;
+    width: 49%;
+}
+
+.submit-button {
+    background-color: #8ABF9A;
+    border: 2px solid #6CA879;
+}
+
+.reset-button {
+    background-color: #F48B82;
+    border: 2px solid #E46C66;
+}
+
+/* Media and Page Sizing styles */
+@media (min-width: 1000px) {
+    .main {
+        display: flex;
+        flex-direction: row;
+        gap: $gap;
+        align-items: center;
+        justify-content: center;
+        padding: 10% 25%;
+    }
+}

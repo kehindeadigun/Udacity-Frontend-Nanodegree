@@ -1,11 +1,5 @@
 @use '_partials' as *;
 
-@mixin flex-center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .description {
     padding: 1rem;
     margin: 1.5rem auto;

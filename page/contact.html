@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/main.css">
-    </head>
-    <body>
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-list__item">KOCHI</li>
-                <li class="nav-list__item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-list__item nav-list__item--selected"><a href="#" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-        <header class="header">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-list__item">KOCHI</li>
+            <li class="nav-list__item"><a href="../index.html" class="nav-link">Home</a></li>
+            <li class="nav-list__item nav-list__item--selected"><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <header class="header">
+        <div class="header__text">
             <h1 class="header__title">CONTACT US</h1>
-        </header>
-        <main>
-            <section class="description">
-                <h2 class="description__title">What We Do</h2>
-                <article class="description__section">
-                    <p class="description__section__title">Innovative</p>
-                    <p class="description__section__text">Introducing new, original ideas.</p>
-                </article>
-            </section>
-        </main>
-        <footer>
-            <p>Copyright Kochi Inc 2024 Developed by Eric Kovalesky</p>
-        </footer>
-    </body>
+        </div>
+    </header>
+    <main class="main">
+        <section class="contact-info">
+            <h2 class="contact-info__title">Contact Details</h2>
+            <div class="contact-info__container">
+                <p class="contact-info__email">contact@kochi.com</p>
+                <p class="contact-info__number">(555) 555-5555</p>
+            </div>
+            <div class="contact-info__address">
+                <h3 class="contact-info__address-title">Central HQ</h3>
+                <p class="contact-info__address-text">123 Avenue Street</p>
+                <p class="contact-info__address-text">City Township, CA 12345</p>
+            </div>
+        </section>
+        <section class="contact-form">
+            <h2 class="contact-form__title">Online Inquiry</h2>
+            <form method="post" class="form">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="e.g John Smith">
+
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="e.g name@domain.tld">
+
+                    <label class="form-label message-label" for="message">Message</label>
+                    <textarea name="message" placeholder="Type your message here (between 20 and 500 characters)"
+                        name="message" id="message"></textarea>
+
+                    <div class="button-container">
+                        <button class="button submit-button">SUBMIT</button>
+                        <button class="button reset-button">RESET</button>
+                    </div>
+
+
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright Kochi Inc 2024 Developed by Eric Kovalesky</p>
+    </footer>
+</body>
+
 </html>

@@ -10,6 +10,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
+  height: 100%;
 }
 
 nav {
@@ -90,6 +91,7 @@ footer {
   margin-top: 1.5rem;
 }
 
+/* Media and Page Sizing styles */
 @media (min-width: 900px) {
   html {
     font-size: 14px;
