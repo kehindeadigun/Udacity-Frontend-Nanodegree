@@ -1,0 +1,102 @@
+@use '_partials' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background-color: $primary-color;
+    padding: 0.25rem;
+}
+
+.nav-list{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 10fr 1fr 1fr;
+    gap: 0.5rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: $padding;
+}
+
+.nav-list__item{
+    color: #fff;
+}
+
+.nav-list__item--selected{
+    font-weight: bold;
+}
+
+.nav-list__item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.button {
+    border: none;
+    box-shadow: none;
+}
+
+.header {
+    background-repeat: cover;
+    background: url("../images/rainbow-vortex.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    gap: 1.2rem;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__title {
+        color: #fff;
+        font-size: 2.5rem;
+    }
+
+    &__desc {
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 0.6rem 0;
+    }
+
+    &__button {
+        color: #000;
+        background-color: $secondary-color;
+        padding: 1rem 3rem;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: all 0.25s ease-in;
+    }
+
+    &__button:hover {
+        background-color: lighten(#f7a442, 10%);
+        transform: scale(105%);
+        cursor: pointer;
+    }
+}
+
+footer {
+    background-color: #000;
+    padding: $padding;
+    color: #fff;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 900px){
+    html {
+        font-size: 14px;
+    }
+}
