@@ -89,9 +89,10 @@ nav {
 
 footer {
     background-color: #000;
-    padding: $padding;
+    padding: 2*$padding;
     color: #fff;
     text-align: center;
+    width: 100%;
     margin-top: 1.5rem;
 }
 
