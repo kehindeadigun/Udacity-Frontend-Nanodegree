@@ -96,6 +96,17 @@ footer {
   }
   .header {
     height: 500px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .header__text {
+    grid-area: 3/11/4/20;
+  }
+  .header__button {
+    grid-area: 4/12/5/18;
   }
 }
 @media (min-width: 1200px) {
@@ -104,5 +115,11 @@ footer {
   }
   .header {
     height: 600px;
+  }
+  .header__text {
+    grid-area: 3/12/4/20;
+  }
+  .header__button {
+    grid-area: 4/13/5/18;
   }
 }/*# sourceMappingURL=main.css.map */
