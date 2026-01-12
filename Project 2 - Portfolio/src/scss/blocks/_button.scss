@@ -1,0 +1,45 @@
+@use "../utils/variables";
+@use "../utils/mixins";
+
+.button {
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    @include mixins.flex-container(center, center);
+    gap: 0.5rem;
+
+    &:hover {
+        transform: scale(105%);
+    }
+
+    &__primary {
+        color: variables.$white;
+        background-color: variables.$dark-blue;
+    }
+
+    &__secondary {
+        color: variables.$dark-blue;
+        background-color: variables.$white;
+        border: 1px solid variables.$dark-blue;
+    }
+
+    &__tertiary {
+        color: variables.$purple;
+        background-color: variables.$white;
+        border: 1px solid variables.$purple;
+        font-size: 1rem;
+    }
+
+    &__primary:hover {
+        background-color: variables.$purple;
+    }
+
+    &__secondary:hover {
+        color: variables.$purple;
+        border-color: variables.$purple;
+    }
+
+}

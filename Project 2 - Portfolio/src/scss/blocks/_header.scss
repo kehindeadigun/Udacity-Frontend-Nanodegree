@@ -1,0 +1,107 @@
+
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.header {
+    @include mixins.flex-container(space-between, center);
+    @include mixins.responsive-padding();
+    box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.03), 0px 8px 12px 0px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+
+    &__logo {
+        color: variables.$neutral;
+    }
+
+    &__toggle {
+        display: none;
+    }
+
+    &__hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 0.365rem;
+        cursor: pointer;
+
+        span {
+            width: 1.5rem;
+            height: 0.125rem;
+            background: variables.$neutral;
+            display: block;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &__nav {
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        max-height: 0px;
+
+        @include mixins.flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    &__nav-item {
+        width: 100%;
+        @include mixins.responsive-padding(1rem);
+        border-top: 1px solid variables.$light-grey;
+    }
+
+    &__nav-item a {
+        text-decoration: none;
+        color: variables.$neutral;
+    }
+
+    /* OPEN MENU */
+    &__toggle:checked + &__hamburger + &__nav {
+        max-height: 100vh;
+    }
+
+    /* ROTATE MENU TO X WHEN CLICKED 1ST ROTATES 45 AND 3RD -45 DEG, 2ND VANISHES*/
+    &__toggle:checked + &__hamburger span:nth-child(1) {
+        transform: translateY(0.5rem) rotate(45deg);
+    }
+
+    &__toggle:checked + &__hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    &__toggle:checked + &__hamburger span:nth-child(3) {
+        transform: translateY(-0.5rem) rotate(-45deg);
+    }
+
+}
+
+
+@media screen and (min-width: 600px) {
+    .header {
+        &__hamburger {
+            display: none;
+        }
+
+        &__nav {
+            position: static;
+            width: auto;
+            background: none;
+            max-height: none;
+
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 1rem;
+        }
+
+        &__nav-item {
+            width: auto;
+            padding: 0;
+            border-top: none;
+        }
+    }
+}
