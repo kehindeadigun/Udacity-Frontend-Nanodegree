@@ -13,17 +13,78 @@ body {
   font-family: "Be Vietnam Pro", sans-serif;
 }
 
+h1,
 h2 {
   font-size: 2rem;
   font-weight: 700;
 }
 
+@keyframes headerFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeSlideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeSlideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px clamp(10px, 10%, 3rem);
   box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.03), 0px 8px 12px 0px rgba(0, 0, 0, 0.08);
+  animation: headerFadeIn 0.6s ease-out forwards;
+  opacity: 0;
   position: relative;
   /* OPEN MENU */
   /* ROTATE MENU TO X WHEN CLICKED 1ST ROTATES 45 AND 3RD -45 DEG, 2ND VANISHES*/
@@ -85,6 +146,13 @@ h2 {
   transform: translateY(-0.5rem) rotate(-45deg);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .header {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
 @media screen and (min-width: 600px) {
   .header__hamburger {
     display: none;
@@ -123,7 +191,7 @@ h2 {
 }
 .button__primary {
   color: #FFFFFF;
-  background-color: #132238;
+  background-color: #3F0075;
 }
 .button__secondary {
   color: #132238;
@@ -131,15 +199,19 @@ h2 {
   border: 1px solid #132238;
 }
 .button__tertiary {
-  color: #A53DFF;
+  color: #3F0075;
   background-color: #FFFFFF;
-  border: 1px solid #A53DFF;
+  border: 1px solid #3F0075;
   font-size: 1rem;
 }
 .button__primary:hover {
   background-color: #A53DFF;
 }
 .button__secondary:hover {
+  color: #A53DFF;
+  border-color: #A53DFF;
+}
+.button__tertiary:hover {
   color: #A53DFF;
   border-color: #A53DFF;
 }
@@ -151,6 +223,10 @@ h2 {
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+}
+.bio__image-container {
+  opacity: 0;
+  animation: fadeSlideInLeft 0.9s ease-in forwards;
 }
 .bio__image {
   width: 100%;
@@ -164,6 +240,8 @@ h2 {
   flex-direction: column;
   row-gap: 1.5rem;
   width: 100%;
+  opacity: 0;
+  animation: fadeSlideInRight 1s ease-in forwards;
 }
 .bio__header {
   color: #132238;
@@ -182,6 +260,13 @@ h2 {
   flex-wrap: wrap;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .bio__image-container, .bio__text-container {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
 @media screen and (min-width: 700px) {
   .bio__image {
     width: auto;
@@ -203,6 +288,10 @@ h2 {
   flex-direction: column;
   background-color: #F0F1F3;
 }
+.latest-projects > .button__primary {
+  opacity: 0;
+  animation: fadeSlideInLeft 1.8s ease-in-out forwards;
+}
 
 .projects__container {
   display: flex;
@@ -210,6 +299,10 @@ h2 {
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+}
+.projects__header {
+  opacity: 0;
+  animation: fadeSlideInBottom 1.3s ease-in-out forwards;
 }
 
 .project__container {
@@ -223,6 +316,8 @@ h2 {
   overflow: hidden;
   border: 1px solid #E6E8EB;
   box-shadow: 0px 12px 64px rgba(28, 25, 25, 0.12);
+  opacity: 0;
+  animation: fadeSlideInTop 0.6s ease-in-out forwards 0.5s;
 }
 .project__image-container {
   width: 100%;
@@ -234,7 +329,7 @@ h2 {
 .project__tag {
   font-size: 0.75rem;
   font-weight: 300;
-  color: #87909D;
+  color: #626365;
   margin-bottom: 0.5rem;
 }
 .project__title {
@@ -246,7 +341,7 @@ h2 {
 .project__desc {
   font-size: 0.875rem;
   font-weight: 400;
-  color: #87909D;
+  color: #626365;
   margin-bottom: 1rem;
 }
 .project > .button {
@@ -257,6 +352,23 @@ h2 {
   padding: 1.875rem;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .latest-projects > .button__primary {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .projects__header {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .project__container {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
 .footer {
   display: flex;
   justify-content: space-between;
@@ -265,6 +377,8 @@ h2 {
   flex-direction: column;
   gap: 1rem;
   background-color: #132238;
+  opacity: 0;
+  animation: fadeSlideInTop 0.5s ease-in forwards 1s;
 }
 .footer__logo, .footer__copy {
   color: #FFFFFF;
@@ -283,6 +397,13 @@ h2 {
   transition: all 0.25s ease-in-out;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .footer {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
 @media screen and (min-width: 600px) {
   .footer {
     flex-direction: row;

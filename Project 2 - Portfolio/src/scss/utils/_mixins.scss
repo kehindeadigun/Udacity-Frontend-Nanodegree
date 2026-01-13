@@ -8,3 +8,9 @@
 @mixin responsive-padding($padding-up-down: 20px) {
     padding: $padding-up-down clamp(10px, 10%, 3rem);
 }
+
+@mixin cancel-fade-animation() {
+    animation: none;
+    opacity: 1;
+    transform: none;
+}

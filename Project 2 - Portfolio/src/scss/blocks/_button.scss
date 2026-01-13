@@ -17,7 +17,7 @@
 
     &__primary {
         color: variables.$white;
-        background-color: variables.$dark-blue;
+        background-color: variables.$dark-purple;
     }
 
     &__secondary {
@@ -27,9 +27,9 @@
     }
 
     &__tertiary {
-        color: variables.$purple;
+        color: variables.$dark-purple;
         background-color: variables.$white;
-        border: 1px solid variables.$purple;
+        border: 1px solid variables.$dark-purple;
         font-size: 1rem;
     }
 
@@ -38,6 +38,11 @@
     }
 
     &__secondary:hover {
+        color: variables.$purple;
+        border-color: variables.$purple;
+    }
+
+    &__tertiary:hover {
         color: variables.$purple;
         border-color: variables.$purple;
     }
