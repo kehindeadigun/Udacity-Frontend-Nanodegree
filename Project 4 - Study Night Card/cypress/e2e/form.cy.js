@@ -1,34 +1,34 @@
 describe("Create Set Form Functionality", () => {
-    it("Set Form should be visible when clicking button", () => {
+    beforeEach(() => {
         cy.visit("http://localhost:1234/");
         cy.get('[id="cardSetPage"]').click();
         cy.get('[data-cy="toggle_form"]').click();
+    });
+
+    it("Set Form should be visible when clicking button", () => {
         cy.get('[data-cy="set_form"]').should("be.visible");
     });
 
     it("Set Form should submit valid input", () => {
-        cy.visit("http://localhost:1234/");
-        cy.get('[id="cardSetPage"]').click();
-        cy.get('[data-cy="toggle_form"]').click();
         cy.get('[id="titleInput"]').type("Cypress test One");
         cy.get('[data-cy="set_form"]').submit();
     });
 });
 
 describe("Add Card Form Functionality", () => {
-    it("Card exists after valid form creation", () => {
+    beforeEach(() => {
         cy.visit("http://localhost:1234/");
         cy.get('[id="cardSetPage"]').click();
         cy.get('[data-cy="toggle_form"]').click();
+    });
+
+    it("Card exists after valid form creation", () => {
         cy.get('[id="titleInput"]').type("Cypress test Two");
         cy.get('[data-cy="set_form"]').submit();
         cy.get('[data-cy="5"]').should("be.visible");
     });
 
     it("Set Form should reject empty string input", () => {
-        cy.visit("http://localhost:1234/");
-        cy.get('[id="cardSetPage"]').click();
-        cy.get('[data-cy="toggle_form"]').click();
         cy.get('[id="titleInput"]').clear();
         cy.get('[data-cy="set_form"]').submit();
         cy.get('[data-cy="5"]').should("not.exist");
