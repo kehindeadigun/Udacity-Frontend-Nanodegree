@@ -1,0 +1,28 @@
+{
+    "name": "project-5---study-night-card",
+    "version": "1.0.0",
+    "description": "Study Night Card Project for Package Optimization",
+    "license": "MIT",
+    "author": "Kehinde Adigun",
+    "type": "module",
+    "scripts": {
+        "test": "mocha",
+        "gulp": "gulp"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "chai": "^6.2.2",
+        "cypress": "^15.13.0",
+        "eslint": "^10.1.0",
+        "globals": "^17.4.0",
+        "gulp": "^5.0.1",
+        "gulp-cli": "^3.1.0",
+        "gulp-shell": "^0.8.0",
+        "mocha": "^7.2.0",
+        "parcel": "^2.16.4"
+    },
+    "prettier": {
+        "semi": true,
+        "tabWidth": 4
+    }
+}

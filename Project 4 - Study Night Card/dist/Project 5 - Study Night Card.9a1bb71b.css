@@ -1,0 +1,59 @@
+.homeContainer {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.homeContainer img {
+  filter: brightness(70%);
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.homeContainer h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.homeContainer h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+@media (width <= 768px) {
+  .homeContainer h1 {
+    font-size: 2.5rem;
+  }
+
+  .homeContainer h2 {
+    font-size: 1.3rem;
+  }
+
+  .homeContainer img {
+    max-width: 500px;
+    margin-top: 15px;
+  }
+}
+
+@media (width <= 480px) {
+  .homeContainer h1 {
+    font-size: 2rem;
+  }
+
+  .homeContainer h2 {
+    font-size: 1.2rem;
+  }
+
+  .homeContainer img {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+}
+/*# sourceMappingURL=Project 5 - Study Night Card.9a1bb71b.css.map */
